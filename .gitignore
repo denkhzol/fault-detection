@@ -1,0 +1,9 @@
+#ignore modules
+saved_models/
+
+#ignore log files
+*.log
+
+note.txt
+
+reference.txt

@@ -1,9 +1,16 @@
 #ignore modules
 saved_models/
+lightning_logs/
+./pt_tmp
+
+data/AllMerged.csv
+data/mergedZimmerman.csv
+data/mergePromise.csv
 
 #ignore log files
 *.log
 
+roc_curve_tabtransformer_smote_standartization_default_parameters2.py
 note.txt
 
 reference.txt

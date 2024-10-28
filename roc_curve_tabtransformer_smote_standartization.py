@@ -88,7 +88,7 @@ def evaluate_and_plot_roc(tabular_model, test_all, y_test2, filename):
 # Main function to execute the entire workflow
 def main():
     #file_path = 'data/AllMerged.csv'
-    file_path = 'data/AllMerged.csv'
+    file_path = 'data/AllMerged_short.csv'
     data = load_and_preprocess_data(file_path)
     
     column_names = data.columns[:-1].tolist()
@@ -123,7 +123,8 @@ def main():
     print("-------------- EVALUATION ------------")
     print(evaluation_table)
     
-    filenames = ['mergePromise', 'mergedBugPrediction']
+    #filenames = ['AllMerged', 'mergePromise', 'mergedBugCatchers', 'mergedBugPrediction', 'mergedGitHub','mergedZimmerman']
+    filenames = ['mergedBugPrediction']
     for filename in filenames:
         data2 = load_and_preprocess_data('data/' + filename + '.csv')
         print("-------------- TEST DATA ------------")

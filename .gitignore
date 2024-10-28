@@ -10,6 +10,8 @@ data/mergePromise.csv
 #ignore log files
 *.log
 
+.gitignore
+
 roc_curve_tabtransformer_smote_standartization_default_parameters2.py
 note.txt
 

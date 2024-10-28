@@ -1,0 +1,140 @@
+$ python3 roc_curve_tabtransformer_smote_standartization.py 
+-------------- PREPARED DATASET ------------
+(76832, 25)
+    NumAttr    NumOps  NumPubOps   Setters   Getters  ...    IC_Par     Assoc  NumDirClients  NumIndClients  Label
+0 -0.165780 -0.253442  -0.074328  0.038242 -0.329805  ... -0.293172 -0.090875      -0.139529      -0.034052    1.0
+1  0.004083 -0.097155  -0.013040  0.809033  0.232080  ... -0.238420 -0.090875      -0.139529      -0.034052    0.0
+2 -0.222401 -0.461824  -0.442059 -0.347154 -0.517100  ... -0.238420 -0.090875       0.514871      -0.034052    0.0
+3 -0.109159 -0.305537  -0.135617  0.423637 -0.517100  ... -0.512179 -0.090875      -0.139529      -0.034052    0.0
+4 -0.222401 -0.409728  -0.319482 -0.347154 -0.517100  ... -0.512179 -0.090875      -0.139529      -0.034052    0.0
+
+[5 rows x 25 columns]
+(16852, 25)
+    NumAttr    NumOps  NumPubOps   Setters   Getters  ...    IC_Par     Assoc  NumDirClients  NumIndClients  Label
+0  0.060704 -0.201346  -0.013040 -0.347154  0.606670  ... -0.457427 -0.090875      -0.139529      -0.034052    0.0
+1 -0.222401 -0.305537  -0.319482 -0.347154 -0.142510  ... -0.238420 -0.090875      -0.139529      -0.034052    1.0
+2 -0.165780 -0.409728  -0.319482 -0.347154 -0.517100  ... -0.238420 -0.090875      -0.139529      -0.034052    0.0
+3 -0.165780 -0.409728  -0.319482 -0.347154 -0.329805  ... -0.457427 -0.090875      -0.139529      -0.034052    0.0
+4 -0.052538 -0.305537  -0.319482 -0.347154 -0.329805  ... -0.128916 -0.090875      -0.139529      -0.034052    0.0
+
+[5 rows x 25 columns]
+2024-10-28 15:11:07,880 - {pytorch_tabular.tabular_model:140} - INFO - Experiment Tracking is turned off          
+Seed set to 42
+2024-10-28 15:11:07,899 - {pytorch_tabular.tabular_model:524} - INFO - Preparing the DataLoaders                  
+2024-10-28 15:11:07,917 - {pytorch_tabular.tabular_datamodule:499} - INFO - Setting up the datamodule for         
+classification task                                                                                               
+2024-10-28 15:11:07,971 - {pytorch_tabular.tabular_model:574} - INFO - Preparing the Model: CategoryEmbeddingModel
+2024-10-28 15:11:08,009 - {pytorch_tabular.tabular_model:340} - INFO - Preparing the Trainer                      
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+2024-10-28 15:11:08,076 - {pytorch_tabular.tabular_model:652} - INFO - Training Started                           
+/home/eworld/.local/lib/python3.8/site-packages/torch/cuda/__init__.py:497: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+2024-10-28 15:11:08.336581: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-28 15:11:08.899474: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/home/eworld/.local/lib/python3.8/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:639: Checkpoint directory /home/eworld/fault_detection_tab_tf/saved_models exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃   ┃ Name             ┃ Type                      ┃ Params ┃
+┡━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ _backbone        │ CategoryEmbeddingBackbone │  3.7 K │
+│ 1 │ _embedding_layer │ Embedding1dLayer          │     48 │
+│ 2 │ head             │ LinearHead                │     66 │
+│ 3 │ loss             │ CrossEntropyLoss          │      0 │
+└───┴──────────────────┴───────────────────────────┴────────┘
+Trainable params: 3.8 K                                                                                           
+Non-trainable params: 0                                                                                           
+Total params: 3.8 K                                                                                               
+Total estimated model params size (MB): 0                                                                         
+/home/eworld/.local/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 
+'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the 
+`num_workers` argument` to `num_workers=11` in the `DataLoader` to improve performance.
+/home/eworld/.local/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 
+'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the 
+`num_workers` argument` to `num_workers=11` in the `DataLoader` to improve performance.
+Epoch 23/499 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 241/241 0:00:02 • 0:00:00 91.57it/s v_num: 1.000 train_loss: 0.700  
+                                                                                  valid_loss: 0.605               
+                                                                                  valid_accuracy: 0.674           
+                                                                                  train_accuracy: 0.684           
+2024-10-28 15:12:34,013 - {pytorch_tabular.tabular_model:663} - INFO - Training the model completed               
+2024-10-28 15:12:34,014 - {pytorch_tabular.tabular_model:1489} - INFO - Loading the best model                    
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/home/eworld/.local/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=11` in the `DataLoader` to improve performance.
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│       test_accuracy       │    0.6670424938201904     │
+│         test_loss         │    0.6244155764579773     │
+└───────────────────────────┴───────────────────────────┘
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66/66 0:00:00 • 0:00:00 136.06it/s  
+-------------- EVALUATION ------------
+                accuracy  precision   recall  F1 score      AUC
+TabTransformer  0.667042   0.622867  0.66319  0.619387  0.66319
+-------------- TEST DATA ------------
+(15495, 25)
+   NumAttr  NumOps  NumPubOps  Setters  Getters  ...  IC_Par  Assoc  NumDirClients  NumIndClients  Label
+0    349.0     0.0        0.0      0.0      0.0  ...     0.0    0.0            0.0            0.0    1.0
+1    334.0     0.0        0.0      0.0      0.0  ...     0.0    0.0            0.0            0.0    1.0
+2    334.0     0.0        0.0      0.0      0.0  ...     0.0    0.0            0.0            0.0    0.0
+3    334.0     0.0        0.0      0.0      0.0  ...     0.0    0.0            0.0            0.0    1.0
+4    323.0     3.0        3.0      1.0      1.0  ...     5.0    0.0            0.0            0.0    0.0
+
+[5 rows x 25 columns]
+-------------- TEST DATA AFTER STANDARDIZATION ------------
+(15495, 25)
+     NumAttr    NumOps  NumPubOps   Setters   Getters  ...    IC_Par     Assoc  NumDirClients  NumIndClients  Label
+0  19.538330 -0.566015  -0.442059 -0.347154 -0.517100  ... -0.621682 -0.090875      -0.139529      -0.034052    1.0
+1  18.689015 -0.566015  -0.442059 -0.347154 -0.517100  ... -0.621682 -0.090875      -0.139529      -0.034052    1.0
+2  18.689015 -0.566015  -0.442059 -0.347154 -0.517100  ... -0.621682 -0.090875      -0.139529      -0.034052    0.0
+3  18.689015 -0.566015  -0.442059 -0.347154 -0.517100  ... -0.621682 -0.090875      -0.139529      -0.034052    1.0
+4  18.066184 -0.409728  -0.258194  0.038242 -0.329805  ... -0.347923 -0.090875      -0.139529      -0.034052    0.0
+
+[5 rows x 25 columns]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/home/eworld/.local/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=11` in the `DataLoader` to improve performance.
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│       test_accuracy       │    0.6149725914001465     │
+│         test_loss         │    0.6682116389274597     │
+└───────────────────────────┴───────────────────────────┘
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61/61 0:00:00 • 0:00:00 131.49it/s  
+-------------- PILOTS SAVED ------------
+roc_curve_tabtransformer_smote_standartization.py:85: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+-------------- TEST DATA ------------
+(4880, 25)
+   NumAttr  NumOps  NumPubOps  Setters  Getters  ...  IC_Par  Assoc  NumDirClients  NumIndClients  Label
+0      3.0    18.0       15.0      0.0     12.0  ...    23.0    0.0            0.0            0.0    1.0
+1      1.0    15.0       15.0      1.0     11.0  ...    23.0    0.0            0.0            0.0    0.0
+2     33.0    66.0       55.0      3.0     17.0  ...    86.0    0.0            0.0            0.0    1.0
+3      2.0    19.0       16.0      1.0      3.0  ...    28.0    0.0            0.0            0.0    1.0
+4     13.0    13.0       13.0      5.0      7.0  ...     0.0    0.0            0.0            0.0    0.0
+
+[5 rows x 25 columns]
+-------------- TEST DATA AFTER STANDARDIZATION ------------
+(4880, 25)
+    NumAttr    NumOps  NumPubOps   Setters   Getters  ...    IC_Par     Assoc  NumDirClients  NumIndClients  Label
+0 -0.052538  0.371705   0.477268 -0.347154  1.730439  ...  0.637609 -0.090875      -0.139529      -0.034052    1.0
+1 -0.165780  0.215419   0.477268  0.038242  1.543144  ...  0.637609 -0.090875      -0.139529      -0.034052    0.0
+2  1.646092  2.872293   2.928809  0.809033  2.666914  ...  4.086973 -0.090875      -0.139529      -0.034052    1.0
+3 -0.109159  0.423801   0.538557  0.038242  0.044785  ...  0.911368 -0.090875      -0.139529      -0.034052    1.0
+4  0.513672  0.111227   0.354691  1.579824  0.793965  ... -0.621682 -0.090875      -0.139529      -0.034052    0.0
+
+[5 rows x 25 columns]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/home/eworld/.local/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=11` in the `DataLoader` to improve performance.
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│       test_accuracy       │    0.5899590253829956     │
+│         test_loss         │    0.7042948007583618     │
+└───────────────────────────┴───────────────────────────┘
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20/20 0:00:00 • 0:00:00 138.32it/s  
+-------------- PILOTS SAVED ------------
+roc_curve_tabtransformer_smote_standartization.py:85: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+-------------- FINISHED SUCCESSFULLY ------------

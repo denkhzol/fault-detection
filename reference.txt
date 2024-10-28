@@ -1,0 +1,6 @@
+https://www.cs.ubc.ca/~rtholmes/papers/tosem_2024_chowdhury.pdf
+
+https://link.springer.com/chapter/10.1007/978-3-030-87007-2_14
+
+
+https://github.com/manujosephv/pytorch_tabular/blob/main/src/pytorch_tabular/models/ft_transformer/config.py
